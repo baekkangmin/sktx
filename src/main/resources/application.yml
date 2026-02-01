@@ -33,11 +33,12 @@ spring:
     producer:
       acks: all
 
+# 토큰 만료 시간 및 예약 보류 시간 설정
 sktx:
   waiting:
-    token-ttl-seconds: 600
-    admitted-ttl-seconds: 120
+    token-ttl-seconds: 600 # Waiting(대기) 토큰의 TTL
+    admitted-ttl-seconds: 120 # Admit(승인)된 토큰의 TTL
   reservation:
-    hold-seconds: 300
+    hold-seconds: 300 # 좌석 예약(HOLD) 상태의 유지 시간
   admit:
-    per-second: 50
+    per-second: 50 # 1초당 입장 허용 인원
